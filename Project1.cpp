@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 int search_con(string var){
@@ -60,7 +61,14 @@ void Process(string variable){
 }
 
 int main(int argc, char* argv[]){
+    vector<string> variable_list(0);
+    vector<string> conclusion_list(0);
+    vector<string> clause_variable_list(variable_list.size() * conclusion_list.size());
 
+    //Back-Chain start
+    string goal = ""; //goal sought
+    Process(goal);
+    
 
     return 0;
 }
