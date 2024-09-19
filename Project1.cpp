@@ -66,6 +66,21 @@ void Process(string variable){
             }
         }
 }
+void initialize(vector<tuple<string, int>> variable_list, vector<string> conclusion_list, vector<string> clause_variable_list);
+
+int main(int argc, char* argv[]){
+    vector<tuple<string, int>> variable_list(29);
+    vector<string> conclusion_list(32);
+    vector<string> clause_variable_list(4 * conclusion_list.size());
+
+    initialize(variable_list, conclusion_list, clause_variable_list);
+    //Back-Chain start
+    string goal = ""; //goal sought
+    Process(goal);
+    
+
+    return 0;
+}
 
 void initialize(vector<tuple<string, int>> variable_list, vector<string> conclusion_list, vector<string> clause_variable_list){
     //  Initialize variable list, -1 to show unintialized
@@ -198,18 +213,4 @@ void initialize(vector<tuple<string, int>> variable_list, vector<string> conclus
     clause_variable_list[121] = "GAS CAP";
     clause_variable_list[124] = "ENGINE ISSUES";
     clause_variable_list[125] = "EMISSIONS";
-}
-
-int main(int argc, char* argv[]){
-    vector<tuple<string, int>> variable_list(29);
-    vector<string> conclusion_list(32);
-    vector<string> clause_variable_list(4 * conclusion_list.size());
-
-    initialize(variable_list, conclusion_list, clause_variable_list);
-    //Back-Chain start
-    string goal = ""; //goal sought
-    Process(goal);
-    
-
-    return 0;
 }
