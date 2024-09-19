@@ -133,6 +133,7 @@ void initialize(vector<tuple<string, int>> variable_list, vector<string> conclus
     conclusion_list[30] = "DIAGNOSIS";
     conclusion_list[31] = "DIAGNOSIS";
 
+    //  Initialize clause variable list
     clause_variable_list[0] = "CAR TROUBLE";
     clause_variable_list[4] = "CAR STARTS";
     clause_variable_list[5] = "BATTERY CHECK LIGHT";
@@ -204,6 +205,7 @@ int main(int argc, char* argv[]){
     vector<string> conclusion_list(32);
     vector<string> clause_variable_list(4 * conclusion_list.size());
 
+    initialize(variable_list, conclusion_list, clause_variable_list);
     //Back-Chain start
     string goal = ""; //goal sought
     Process(goal);
